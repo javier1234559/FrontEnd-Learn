@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begin Reacjs</title>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <h1>hELLO</h1>>
+    <div id="root"></div>
+
+
+    <!-- Load our React component. -->
+    
+
+
+    <script type="text/babel">
+        const text  = 'Hello world by JSX'
+        
+        const h1 = <h1>{text}</h1>
+
+        ReactDOM.render(h1,document.getElementById('root'))
+    </script>
+    <script >
+            //DOM 
+            const h1DOM = document.createElement('h1')
+          
+            h1DOM.title = "hello title"
+            h1DOM.className = 'helloclass'
+
+            h1DOM.innerHTML = "Hello world by DOM"
+
+            document.body.appendChild(h1DOM)
+
+
+            //React
+            const h1React = React.createElement('h1',{
+                    title: 'hello title' ,
+                    className: 'helloclass'               
+            },'Hello world by Reactjs')
+
+            const root1 = document.getElementById("root")
+            ReactDOM.render(h1React,root1)   
+            console.dir(h1DOM)
+            console.log(h1React)
+
+    
+    </script>
+    <script>
+        //DOM
+        const ulDOM = document.createElement('ul')
+        ulDOM.id= "id"
+        ulDOM.style = "color:blue" 
+
+        const liDOM1 = document.createElement('li')
+        liDOM1.innerText = "liDom1"
+        const liDOM2 = document.createElement('li')
+        liDOM2.innerText = "liDom2"
+
+        ulDOM.appendChild(liDOM1)
+        ulDOM.appendChild(liDOM2)
+        document.body.appendChild(ulDOM)
+        //React
+        const ulReact = React.createElement(
+            'ul',
+            {
+                style : "color:blue"
+            },
+            React.createElement("li",null,"liDOm1"),
+            React.createElement("li",null,"liDOm2")
+            )
+
+        //     const root = document.getElementById("root")
+        // ReactDOM.render(ulReact,root)    
+
+        console.dir(ulDOM)
+        console.log(ulReact)
+    </script>
+
+</body>
+</html>

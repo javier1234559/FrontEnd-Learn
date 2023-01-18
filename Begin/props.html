@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Props</title>
+</head>
+<body>
+    <div id="root"></div>
+
+</body>
+
+
+<script type="text/babel">
+    // function swap(arr,a,b){
+    //     temp = arr[a]
+    //     arr[a] = arr[b]
+    //     arr[b] = temp
+    // }
+
+    // const arr = [4,5]
+    // console.log(arr[0])
+    // console.log(arr[1]) 
+
+    // console.log("----------------")
+    // swap(arr,0,1)
+
+    // console.log(arr[0])
+    // console.log(arr[1]) 
+
+    // var course = ['Javascript','Java','Python'];
+    // Array.prototype.MapByMyself = function(callback){
+    //     console.log(this)
+    //     for(let i = 0 ; i < this.length ;i++){
+    //         callback(this[i],i)
+    //     }
+    // }
+
+    // course.MapByMyself((index,i) =>{
+    //     console.log(i,index);
+    // })
+
+    
+    
+    array = [1,2,3,4,5]
+    array2 = array.map(() =>{
+        if(item % 2 !== 0)
+            return item;
+    })
+
+  
+
+
+    function handleOnClick (){
+        
+    }
+
+    //Component
+    function PostItem(props , onClick){
+        return (
+            <div  className="post-item">
+                <label onClick={onClick} htmlFor="email">Email</label>
+                <input id="email"/>
+                <img src="" alt={props.imagealt}/>    
+                <h2 className="post-title"></h2>
+                <p className="post-desc">{props.description}</p>
+                <p className="post-published">{props.publichsed}</p>
+            </div>
+        )
+    }
+    // function Input({label, ...props}){
+    //     return (
+    //         <>
+    //             <label >{label}</label> 
+    //             <input {...props}/>                   
+    //         </>
+    //     )
+    // }
+
+    //App.js
+    function App(){
+        return (
+            <div id="wapper" >
+                <PostItem
+                    title="C#.Net - Tương tác với file Excel"
+                    imagealt = "day la anh"
+                    description = "Bạn có kiến thức về C#"
+                    publichsed = "Một ngày trước - 5 phút trước"
+                    onClick = {handleOnClick()}
+                />
+            </div>
+        ) 
+    }
+        
+    //index.js
+    ReactDOM.render(<App/>, document.getElementById('root'))
+
+
+</script>
+
+</html>

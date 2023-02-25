@@ -1,21 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Button } from './Button';
 import './HeroSection.css' ;
 import '../App.css';
 
 
 function HeroSection() {
-
   const [showBackground,setshowBackground ] = useState(true) ;
-  
-  const handleShow = (showBackground) => {
+  // console.log(showBackground)
+  const handleShow = () => {
+    console.log(showBackground)
     setshowBackground(!showBackground);
   }
   
-  useEffect(()=>{
-    handleShow()
-  },[]);
-
   return (
     <div className={`hero-container  ${showBackground ? "show" : ""}`}>
         <video src="/videos/video-1.mp4" autoPlay loop muted />
